@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Cart</title>
+
+<style>
+
+body {
+    font-family: Arial;
+    background-color: #f0f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(4, 151, 151);
+    font-size: 40px;
+    margin-top: 30px;
+    letter-spacing: 2px;
+}
+
+.cartBox {
+    width: 800px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgb(210, 215, 215);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    gap: 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.item:hover {
+    background-color: #f9f9f9;
+}
+
+.item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid rgb(4, 151, 151);
+}
+
+.item span {
+    font-size: 14px;
+    color: #333;
+}
+
+.price {
+    color: rgb(4, 151, 151);
+    font-weight: bold;
+}
+
+.delete {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.delete:hover {
+    background-color: red;
+    color: white;
+}
+
+.total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f0f4f4;
+    border-radius: 8px;
+}
+
+.total-box p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+#total {
+    font-weight: bold;
+    color: rgb(4, 151, 151);
+    font-size: 18px;
+}
+
+.clear {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.clear:hover {
+    background-color: rgb(4, 151, 151);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2> My Cart</h2>
+
+<div class="cartBox">
+
+    <div id="cartItems"></div>
+     <div class="total-box">
+    <p>Total: <span id="total">0</span> EGP</p>
+    </div>
+    <button class="clear" onclick="clearCart()">Clear Cart</button>
+
+</div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function showCart(){
+
+    let div = document.getElementById("cartItems");
+    let total = 0;
+
+    div.innerHTML = "";
+
+    for(let i=0; i<cart.length; i++){
+
+        total += cart[i].price;
+
+        div.innerHTML += `
+        <div class="item">
+            <span>${cart[i].name}</span>
+            <span class="price">${cart[i].price} EGP</span>
+            <button class="delete" onclick="removeItem(${i})">❌</button>
+        </div>
+        `;
+    }
+
+    document.getElementById("total").innerText = total;
+}
+
+function removeItem(i){
+    cart.splice(i, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    showCart();
+}
+
+function clearCart(){
+    localStorage.removeItem("cart");
+    cart = [];
+    showCart();
+}
+
+showCart();
+
+</script>
+
+</body>
+</html>
