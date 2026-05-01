@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js">
+   
     <style>
         .list :hover{
             color: rgb(4, 151, 151);
@@ -207,6 +208,24 @@
         color: rgb(4, 151, 151);
         cursor:pointer;
     }
+    .add{
+        display: inline-block; 
+         text-align: center;
+        background-color: black;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 5px;
+        transition: transform 0.2s ease;
+        width: 100%;  
+        box-sizing: border-box;
+   }
+
+   .add:hover {
+        transform: scale(1.1);
+        background-color: rgb(4, 151, 151);
+        } 
     </style>
 </head>
 <body >
@@ -226,8 +245,8 @@
         <li>Contact us</li>
     </ul>
     <div class="icons">
-        <i class="fa-solid fa-magnifying-glass"></i>
-    <i class="fa-regular fa-user"></i> 
+        <i class="fa-solid fa-bag-shopping" onclick="goToCart()"></i>   
+        <i class="fa-regular fa-user"></i> 
      </a>
         <i class="fa-regular fa-heart"></i>
         <i class="fa-solid fa-bag-shopping"></i>
@@ -246,7 +265,7 @@
         </ul>
         </div>
         <div class="pics_1">
-            <div clas="product">
+            <div class="product">
             <img src="download(1).jpg">
             <p>Azure Elegance</p>
             <p>
@@ -254,7 +273,7 @@
             </p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p>+Add to cart</p>
+            <p  class="add"onclick="addToCart('Azure Elegance', 1230)">+Add to cart</p>      
             </div>
             <div clas="product">
             <img src="download(2).jpg">
@@ -262,9 +281,9 @@
             <p>3,100 EGP</p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p>+Add to cart</p>
+            <p class="add"  onclick="addToCart('Ribbon Serenity', 3100)">+Add to cart</p>     
             </div>
-            <div clas="product">
+            <div class="product">
             <img src="download(3).jpg">
              <p>Ribbon Serenity</p>
             <p>
@@ -272,19 +291,19 @@
                 </p>
                 <hr>
                 <i class="fa-regular fa-heart"></i>
-                <p>+Add to cart</p>
+                <p class="add" onclick="addToCart('Ribbon Serenity', 3200)">+Add to cart</p>     
                 </div>
-              <div clas="product"> 
+              <div class="product"> 
             <img src="download(4).jpg">
             <p>Midnight Harmony</p>
             <p>2,300 EGP </p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p>+Add to cart</p>
+            <p class="add" onclick="addToCart('Midnight Harmony', 2300)">+Add to cart</p>     
             </div>
             </div> 
             <div class="pics_2">
-                <div clas="product_2"> 
+                <div class="product_2"> 
             <img src="download(5).jpg">
             <p>Crimson Lily Charm  </p>
             <p>
@@ -292,17 +311,17 @@
                 </p>
                 <hr>
                 <i class="fa-regular fa-heart"></i>
-                <p>+Add to cart</p>
+                <p class="add"  onclick="addToCart('Crimson Lily Charm', 1230)">+Add to cart</p>     
             </div>
-            <div clas="product_2"> 
+            <div class="product_2"> 
             <img src="download(6).jpg">
             <p>Golden Grace </p>
             <p>3,100 EGP</p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p>+Add to cart</p>
+            <p class="add" onclick="addToCart('Golden Grace', 3100)">+Add to cart</p>     
             </div>
-            <div clas="product_2"> 
+            <div class="product_2"> 
             <img src="download(7).jpg">
             <p>Blush Harmony</p>
             <p>
@@ -310,27 +329,27 @@
                 </p>
                 <hr>
                 <i class="fa-regular fa-heart"></i>
-                <p>+Add to cart</p>
+                <p class="add" onclick="addToCart('Blush Harmony', 3200)">+Add to cart</p>     
             </div>
-            <div clas="product_2"> 
+            <div class="product_2"> 
             <img src="download(8).jpg">
             <p>Tulip Sunrise</p>
-            <p>2,300 EGP<p>
+            <p>2,300 EGP</p>
                 <hr>
                 <i class="fa-regular fa-heart"></i>
-                <p>+Add to cart</p>
+                <p class="add" onclick="addToCart('Tulip Sunrise', 2300)">+Add to cart</p>     
             </div>
             </div>
            <div class="pics_3">
-            <div clas="product_3"> 
+            <div class="product_3"> 
             <img src="download.jpg">
             <p>Ivory Grace<p>
             <p>1,250 EGP</p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p>+Add to cart</p>
+            <p class="add" onclick="addToCart('Ivory Grace', 1250)">+Add to cart</p>     
             </div>
-            <div clas="product_3"> 
+            <div class="product_3"> 
             <img src="Flowerbox.jpg">
             <p>Blue Whisper</p>
             <p>
@@ -338,17 +357,17 @@
                 </p>
                 <hr>
                 <i class="fa-regular fa-heart"></i>
-                <p>+Add to cart</p>
+                <p class="add" onclick="addToCart('Blue Whisper', 1450)">+Add to cart</p>     
             </div>
-            <div clas="product_3"> 
+            <div class="product_3"> 
             <img src="Graduation.jpg">
             <p>Pearl Harmony</p>
             <p>2,200 EGP</p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p>+Add to cart</p>
+            <p class="add" onclick="addToCart('Pearl Harmony', 2200)">+Add to cart</p>     
             </div>
-            <div clas="product_3"> 
+            <div class="product_3"> 
             <img src="liliyWallace.jpg">
             <p>Cloud Bloom</p>
             <p>
@@ -356,7 +375,7 @@
             </p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p>+Add to cart</p>
+            <p class="add" onclick="addToCart('Cloud Bloom', 1900)">+Add to cart</p>     
             </div>
            </div> 
            <div class="pics_4">
@@ -366,7 +385,7 @@
             <p>2,300 EGP</p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p>+Add to cart</p>
+            <p class="add" onclick="addToCart('Crimson Charm', 2300)">+Add to cart</p>     
             </div>
             <div class="product_4">
             <img src="Spring.jpg">
@@ -376,7 +395,7 @@
                 </p>
                 <hr>
                 <i class="fa-regular fa-heart"></i>
-                <p>+Add to cart</p>
+                <p class="add" onclick="addToCart('Blush Delight', 2100)">+Add to cart</p>     
             </div>
             <div class="product_4">
             <img src="What.jpg">
@@ -384,7 +403,7 @@
             <p>3,000 EGP</p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p>+Add to cart</p>
+            <p class="add" onclick="addToCart('Magenta Glow', 3000)">+Add to cart</p>     
             </div>
             <div class="product_4">
             <img src="Букет.jpg">
@@ -394,11 +413,22 @@
                 </p>
                 <hr>
                 <i class="fa-regular fa-heart"></i>
-                <p>+Add to cart</p>
+                <p class="add" onclick="addToCart('Rose Symphony', 2600)">+Add to cart</p>     
             </div>
             </div>
             <div class="more">
             <p>VIEW MORE </p>
             </div>
+     <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        function addToCart(name, price){
+       cart.push({name:name, price:price});
+       localStorage.setItem("cart", JSON.stringify(cart));
+       alert("Added to cart");
+        }
+        function goToCart(){
+        window.location.href = "cart.html";
+        }
+  </script>
 </body>
 </html>
