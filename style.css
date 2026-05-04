@@ -102,4 +102,47 @@
     top:10rem;
     background-color: rgba(255,255,255,0.7);
     }
+
+
+#about {
+    background-color: #f4f6f6;
+    padding: 70px 120px;
+        font-family: Arial, sans-serif;
+
+}
+
+#about h1 {
+    font-size: 38px;
+    color: rgb(4, 151, 151);
+    margin-bottom: 25px;
     
+}
+
+
+
+.sec {
+    margin-top: 40px;
+    padding-left: 15px;
+    border-left: 3px solid rgb(4, 151, 151);
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+
+.sec h2 {
+    color: rgb(4, 151, 151);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sec p {
+    color: #444;
+    line-height: 1.9;
+    font-size: 17px;
+    max-width: 650px;
+}
+
+
+.sec:hover {
+    transform: translateX(20px);
+}
