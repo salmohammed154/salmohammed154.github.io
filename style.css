@@ -85,7 +85,7 @@
     .back {
     width:100%;
     height:500px;
-    background-image: url("pictures/background.jpg");
+    background-image: url("pictures/background.jpeg");
     text-align: center;
     background-size: cover;
     background-position: center;
@@ -146,3 +146,36 @@
 .sec:hover {
     transform: translateX(20px);
 }
+
+    .New_arrival{
+        text-align: center;
+        font-size: 60px;
+    }
+        .home_products {
+      display: flex;               
+      justify-content: center;     
+      align-items: center;          
+      gap: 30px;                    
+      padding: 20px;
+    }
+    .home_products img{
+        width: 250px;
+        height: 300px;
+        padding: 9px;
+        border: solid 3px ;
+        border-radius: 2px;
+    }
+        .offers{
+        display: inline-block;
+    }
+    .home_products p{
+        text-align: center;
+    }
+    .home_products del {
+    color: gray;
+    margin-right: 8px;
+  }
+    .home_products img:hover{
+    color: rgb(4, 151, 151);
+    cursor: pointer;
+    }
