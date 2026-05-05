@@ -16,9 +16,9 @@
 }
 
 
-.logo img {
-   width: 250px;   
-   height: 70px;
+.logo img{
+    width:250px;
+    height:40px;
 }
 
 .links {
@@ -96,6 +96,9 @@
     color: rgb(4, 151, 151);
     cursor: pointer;
     }
+    .all{
+        color: rgb(4, 151, 151);
+    }
     .pics_1 {
       display: flex;               
       justify-content: center;     
@@ -110,6 +113,16 @@
         border: solid 3px ;
         border-radius: 2px;
     }
+        .product{
+        display: inline-block;
+    }
+    .pics_1 p{
+        text-align: center;
+    }
+    .pics_1 del {
+    color: gray;
+    margin-right: 8px;
+  }
     .pics_1 img:hover{
     color: rgb(4, 151, 151);
     cursor: pointer;
@@ -128,6 +141,16 @@
         border: solid 3px ;
         border-radius: 2px;
     }
+      .product_2{
+        display: inline-block;
+    }
+    .pics_2 p{
+        text-align: center;
+    }
+    .pics_2 del {
+    color: gray;
+    margin-right: 8px;
+  }
     .pics_2 img:hover{
     color: rgb(4, 151, 151);
     cursor: pointer;
@@ -146,6 +169,16 @@
         border: solid 3px ;
         border-radius: 2px;
     }
+        .product_3{
+        display: inline-block;
+    }
+    .pics_3 p{
+        text-align: center;
+    }
+    .pics_3 del {
+    color: gray;
+    margin-right: 8px;
+  }
     .pics_3 img:hover{
     color: rgb(4, 151, 151);
     cursor: pointer;
@@ -164,6 +197,16 @@
         border: solid 3px ;
         border-radius: 2px;
     }
+    .product_4{
+        display: inline-block;
+    }
+    .pics_4 p{
+        text-align: center;
+    }
+    .pics_4 del {
+    color: gray;
+    margin-right: 8px;
+  }
     .pics_4 img:hover{
     color: rgb(4, 151, 151);
     cursor: pointer;
@@ -243,13 +286,13 @@
 .view button {
     padding: 10px 22px;
     border-radius: 25px;
-    border: 2px solid rgb(4, 151, 151);
     background: transparent;
-    color: rgb(4, 151, 151);
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     letter-spacing: 0.5px;
+    border: 2px solid rgb(4, 151, 151);
+    color: rgb(4, 151, 151);
 }
 
 
@@ -285,5 +328,5 @@
 
    .add:hover {
         transform: scale(1.1);
-        background-color: rgb(4, 151, 151);
+       background-color: rgb(4, 151, 151);
         } 
