@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <style>
+        /*GLOBAL STYLE*/
+       * {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center; 
+    background: #f4f7f6;
+    font-family: sans-serif;
+}
+        /* 2. MAIN WRAPPER */
+       .wrapper {
+    width: 90%;          /* Use percentage for mobile */
+    max-width: 400px;    /* But don't let it get huge on desktop */
+    /* ... rest of your styles ... */
+}
+
+     input[type="radio"] {
+            display: none; }
+        /* 3. TAB CONTROLS (Top Buttons) */
+        .title-controls {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            line-height: 48px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 1;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .slider-tab {
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            left: 0;
+            background:  rgb(4,151,151);
+            border-radius: 9px;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* 4. SELECTION LOGIC */
+        #login-tab:checked ~ .container .slider-tab { left: 0; }
+        #signup-tab:checked ~ .container .slider-tab { left: 50%; }
+        
+        #login-tab:checked ~ .container .login-label { color: #fff; }
+        #signup-tab:checked ~ .container .signup-label { color: #fff; }
+
+        /* 5. FORM SLIDING ANIMATION */
+        .container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .form-inner {
+            display: flex;
+            width: 200%; 
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .form-inner form {
+            width: 50%;
+            padding: 10px;
+        }
+
+        /* Logic to slide the forms */
+        #signup-tab:checked ~ .container .form-inner {
+            transform: translateX(-50%);
+        }
+
+        /* 6. INPUTS, BUTTONS & LINKS */
+        .field {
+            margin-top: 20px;
+        }
+
+        input {
+            width: 100%;
+            height: 48px;
+            padding: 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #680f0f;
+        }
+
+        button {
+            width: 100%;
+            height: 50px;
+            background:black;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: rgb(4,151,151);
+        }
+
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .form-footer label {
+            color: #680f0f;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .form-footer label:hover {
+            text-decoration: underline;
+        }
+
+        .pass-link {
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .pass-link a {
+            color: #680f0f;
+            text-decoration: none;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <input type="radio" name="slider" id="login-tab" checked>
+        <input type="radio" name="slider" id="signup-tab">
+
+        <div class="container">
+            <div class="title-controls">
+                <label for="login-tab" class="tab login-label">Login</label>
+                <label for="signup-tab" class="tab signup-label">Signup</label>
+                <div class="slider-tab"></div>
+            </div>
+
+            <div class="form-inner">
+                <form action="#" class="login">
+                    <div class="field">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="pass-link"><a href="#">Forgot password?</a></div>
+                    <button type="submit">Login</button>
+                    
+                    <div class="form-footer">
+                        Not a memebr yet? <label for="signup-tab">Signup now</label>
+                    </div>
+                </form>
+
+                <form action="#" class="signup">
+                    <div class="field">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="field">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Create Password" required>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                    
+                    <div class="form-footer">
+                        Already have an account? <label for="login-tab">Login now</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
