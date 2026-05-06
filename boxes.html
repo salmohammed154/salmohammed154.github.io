@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js">
+     <link rel="stylesheet" href="Products.css"> 
+     <link rel="stylesheet" href="style.css">
+    <style>
+body {
+    font-family: Arial;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box-card {
+    width: 220px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.box-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.box-card h3 {
+    margin: 10px 0;
+}
+
+.box-card p {
+    color: #555;
+}
+
+.box-card button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <header class="navbar">
+
+    <div class="logo">
+        <img src="pictures/logo2.png">
+    </div>
+
+    <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="Services.html">Services</a>
+        <a href="Clients.html">Clients</a>
+        <a href="index.html">About us</a>
+        <a href="index.html">Contact us</a>
+    </nav>
+
+     <div class="icons">
+
+    <a href="#"><i class="fa-regular fa-heart"></i></a>
+
+    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        
+    <a href="entrance.html"><i class="fa-regular fa-user"></i></a>
+
+    <a href="Products.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="exit.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    </div>
+</header>
+    <div class="products">
+
+    <div class="box-card">
+        <img src="pictures/box1.jpeg">
+        <h3>Rose Box</h3>
+        <p>850 EGP</p>
+        <button onclick="addToCart('Rose Box',850)">+Add to Cart</button>
+    </div>
+
+    <div class="box-card">
+        <img src="pictures/box2.jpeg">
+        <h3>Chocolate Box</h3>
+        <p>1100 EGP</p>
+        <button onclick="addToCart('Chocolate Box',1100)">+Add to Cart</button>
+    </div>
+
+    <div class="box-card">
+        <img src="pictures/box3.jpeg">
+        <h3>Luxury Gift Box</h3>
+        <p>1500 EGP</p>
+        <button onclick="addToCart('Luxury Gift Box',1500)">+Add to Cart</button>
+    </div>
+
+    <div class="box-card">
+        <img src="pictures/box8.jpeg">
+        <h3>Flower Box</h3>
+        <p>950 EGP</p>
+        <button onclick="addToCart('Flower Box',950)">+Add to Cart</button>
+    </div>
+
+    <div class="box-card">
+        <img src="pictures/box5.jpeg">
+        <h3>Surprise Box</h3>
+        <p>1200 EGP</p>
+        <button onclick="addToCart('Surprise Box',1200)">+Add to Cart</button>
+    </div>
+
+    <div class="box-card">
+        <img src="pictures/box4.jpeg">
+        <h3>Elegant Box</h3>
+        <p>1350 EGP</p>
+        <button onclick="addToCart('Elegant Box',1350)">+Add to Cart</button>
+    </div>
+</div>
+<script src="Products.js"></script>
+</body>
+</html>
