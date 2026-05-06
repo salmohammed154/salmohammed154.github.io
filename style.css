@@ -107,7 +107,7 @@
 #about {
     background-color: #f4f6f6;
     padding: 70px 120px;
-        font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 
 }
 
@@ -179,3 +179,48 @@
     color: rgb(4, 151, 151);
     cursor: pointer;
     }
+    #contact {
+    background-color: #bed7be;
+    padding: 10px 120px;
+    font-family: Arial, sans-serif;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 180px;  
+    }
+.newsletter-form {
+  display: inline-flex;
+  align-items: center;
+}
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+.newsletter-form button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+.newsletter-form button:hover {
+  background-color:rgb(4, 151, 151);;
+}
+.social-icons {
+  display: inline-block;
+  width: 100px;  
+  margin: 10px;
+  text-align: center;     
+  color: #333;
+  font-size: 28px;   
+      
+}
+.social-icons i:hover {
+    color: rgb(4, 151, 151);
+    cursor: pointer;
+}
