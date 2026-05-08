@@ -2,7 +2,7 @@
             color: rgb(4, 151, 151);
             cursor: pointer;
         }
-  .navbar {
+     .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,52 +14,61 @@
     z-index: 1000;
 }
 
-
 .logo img {
-    width: 250px;   
-   height: 70px;
+    width: 160px;
 }
 
+
 .links {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 .links a {
-    text-decoration: none;
-    color: #0f172a;
-    font-weight: 500;
-    position: relative;
-    transition: 0.3s;
+  text-decoration: none;
+  color: #0f172a;   
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
 }
-
-
+.links a.active{
+    color: #0f172a; 
+}
 .links a:hover {
-    color: rgb(4, 151, 151);
+  color: rgb(4, 151, 151); 
 }
-
 
 .links a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: rgb(4, 151, 151);
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: rgb(4, 151, 151);
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
 }
 
 .links a:hover::after {
-    width: 100%;
+  width: 100%;
 }
-
-
-.links a.active {
-    color: rgb(4, 151, 151);
+.active{
+    color: #0f172a; 
 }
-
-
+body.light-theme {
+  background-color: white;
+  color: black;
+}
+body.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
 .icons {
     display: flex;
     flex-direction: row;
@@ -105,7 +114,6 @@
 
 
 #about {
-    background-color: #f4f6f6;
     padding: 70px 120px;
     font-family: Arial, sans-serif;
 
