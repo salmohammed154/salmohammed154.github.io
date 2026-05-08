@@ -1,90 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>EverBloom</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EverBloom</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js">
-     <link rel="stylesheet" href="Products.css"> 
-     <link rel="stylesheet" href="style.css">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"></script>
+
+    <link rel="stylesheet" href="Products.css">
 </head>
-<body >
+
+<body>
+
 <header class="navbar">
 
     <div class="logo">
-        <img src="pictures/logo2.png">
+        <img src="pictures/logo.png">
     </div>
 
     <nav class="links">
         <a href="index.html">Home</a>
-        <a href="products.html" class="active">Products</a>
+        <a href="Products.html">Products</a>
         <a href="Services.html">Services</a>
         <a href="Clients.html">Clients</a>
-        <a href="index.html">About us</a>
-        <a href="index.html">Contact us</a>
+        <a href="Aboutus.html">About us</a>
+        <a href="Contactus.html">Contact us</a>
     </nav>
 
-     <div class="icons">
+    <div class="icons">
 
     <a href="#"><i class="fa-regular fa-heart"></i></a>
 
     <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-        
-    <a href="entrance.html"><i class="fa-regular fa-user"></i></a>
+
+    <a href="login.html"><i class="fa-regular fa-user"></i></a>
 
     <a href="Products.html"><i class="fa-solid fa-magnifying-glass"></i></a>
-    <a href="exit.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+
     </div>
 
 </header>
-    <div class="next">
-        <h1>Our Products</h1>
-        <div class="search-box">
+
+<div class="next">
+    <h1 class="title">Our Products</h1>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search flowers..." onkeyup="search()">
+    </div>
+
+    <div class="view">
+        <button onclick="setView('grid')">Grid</button>
+        <button onclick="setView('list')">List</button>
+        <button onclick="setView('details')">Details</button>
+    </div>
+</div>
+
+<div id="productsContainer" class="grid">
             
-              <input type="text" id="searchInput" placeholder="Search flowers...">
-               <button onclick="search()">Search</button>
-             </div>
-
-        <div class="view">
-            <button onclick="setView('grid')">Grid</button>
-            <button onclick="setView('list')">List</button>
-           <button onclick="setView('details')">Details</button>
-        </div>
-
-        <div id="results"></div>
-        <ul style="list-style: none;">
-        <li class="all">ALL</li>
-        <li><a href="boxes.html" style="text-decoration: none; color: inherit;">Boxes</a></li>
-        <li>Bouquets</li>
-        <li>Arrangements</li>
-        </ul>
-        </div>
-    <div id="productsContainer">
-        <div class="pics_1">
-            <div class="product">
-                <a href="flower3.html">
-            <img src="pictures/download(1).jpg">
-            </a>
-            <p>Azure Elegance</p>
-            <p>
-            <del>2,030 EGP</del>1,230 EGP
-            </p>
+             <div class="product">
+            <img src="pictures/Blush Serenity.jpeg">
+            <p>Blush Serenity</p>
+            <p>3,000 EGP</p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p  class="add"onclick="addToCart('Azure Elegance', 1230)">+Add to cart</p>      
+            <p class="add"  onclick="addToCart('Blush Serenity', 3000)">+Add to cart</p>     
             </div>
-            <div clas="product">
-                 <a href="flower4.html">
-            <img src="pictures/download(2).jpg">
-            </a>
-            <p>Ribbon Serenity</p>
-            <p>3,100 EGP</p>
+            <div class="product"> 
+            <img src="pictures/Vanilla Grace.jpeg">
+            <p>Vanilla Grace</p>
+            <p>
+               3400 EGP
+                </p>
+                <hr>
+                <i class="fa-regular fa-heart"></i>
+                <p class="add"  onclick="addToCart('Vanilla Grace', 3400)">+Add to cart</p>     
+            </div>
+            <div class="product">
+            <img src="pictures/Radiant Love Roses Bouquet.webp">
+            <p>Radiant Love Roses Bouquet</p>
+            <p>
+                <del>3,800 EGP</del>3,100 EGP
+                </p>
+                <hr>
+                <i class="fa-regular fa-heart"></i>
+                <p class="add" onclick="addToCart('Radiant Love Roses Bouquet', 3100)">+Add to cart</p>     
+            </div>
+            <div class="product">
+            <img src="pictures/Bride’s Serenity.jpeg">
+            <p>Bride’s Serenity</p>
+            <p>
+            2900 EGP
+                </p>
+                <hr>
+                <i class="fa-regular fa-heart"></i>
+                <p class="add" onclick="addToCart('Bride’s Serenity', 2900)">+Add to cart</p>     
+            </div>
+            <div class="product">
+            <img src="pictures/Crystal Tulip Rose Bouquet.jpeg">
+            <p>Crystal Tulip Rose Bouquet</p>
+            <p>
+            <del>4500 EGP </del>4000 EGP
+                </p>
+                <hr>
+                <i class="fa-regular fa-heart"></i>
+                <p class="add" onclick="addToCart('Crystal Tulip Rose Bouquet', 4000)">+Add to cart</p>     
+            </div>
+            <div class="product"> 
+            <img src="pictures/Graduation.jpg">
+            <p>Pearl Harmony</p>
+            <p>2,200 EGP</p>
             <hr>
             <i class="fa-regular fa-heart"></i>
-            <p class="add"  onclick="addToCart('Ribbon Serenity', 3100)">+Add to cart</p>     
+            <p class="add" onclick="addToCart('Pearl Harmony', 2200)">+Add to cart</p>     
             </div>
             <div class="product">
             <img src="pictures/download(3).jpg">
@@ -96,81 +124,27 @@
                 <i class="fa-regular fa-heart"></i>
                 <p class="add" onclick="addToCart('Ribbon Serenity', 3200)">+Add to cart</p>     
                 </div>
-              <div class="product"> 
-            <img src="pictures/download(4).jpg">
-            <p>Midnight Harmony</p>
-            <p>2,300 EGP </p>
-            <hr>
-            <i class="fa-regular fa-heart"></i>
-            <p class="add" onclick="addToCart('Midnight Harmony', 2300)">+Add to cart</p>     
-            </div>
-            </div> 
-            <div class="pics_2">
-                <div class="product_2"> 
-            <img src="pictures/download(5).jpg">
-            <p>Crimson Lily Charm  </p>
+             <div class="product"> 
+            <img src="pictures/Red Velvet Bloom.jpeg">
+            <p>Red Velvet Bloom</p>
             <p>
-                <del>2,030 EGP </del>1,230 EGP
+               2,500 EGP
                 </p>
                 <hr>
                 <i class="fa-regular fa-heart"></i>
-                <p class="add"  onclick="addToCart('Crimson Lily Charm', 1230)">+Add to cart</p>     
+                <p class="add"  onclick="addToCart('Red Velvet Bloom', 2500)">+Add to cart</p>     
             </div>
-            <div class="product_2"> 
-            <img src="pictures/download(6).jpg">
-            <p>Golden Grace </p>
-            <p>3,100 EGP</p>
-            <hr>
-            <i class="fa-regular fa-heart"></i>
-            <p class="add" onclick="addToCart('Golden Grace', 3100)">+Add to cart</p>     
-            </div>
-            <div class="product_2"> 
-            <img src="pictures/download(7).jpg">
-            <p>Blush Harmony</p>
+            <div class="product">
+            <img src="pictures/Sweet Romance.jpeg">
+            <p>Rose Symphony</p>
             <p>
-                <del>4,660 EGP</del>3,200 EGP
+            <del>3,400 EGP </del>2,600 EGP
                 </p>
                 <hr>
                 <i class="fa-regular fa-heart"></i>
-                <p class="add" onclick="addToCart('Blush Harmony', 3200)">+Add to cart</p>     
-            </div>
-            <div class="product_2"> 
-            <img src="pictures/download(8).jpg">
-            <p>Tulip Sunrise</p>
-            <p>2,300 EGP</p>
-                <hr>
-                <i class="fa-regular fa-heart"></i>
-                <p class="add" onclick="addToCart('Tulip Sunrise', 2300)">+Add to cart</p>     
-            </div>
-            </div>
-           <div class="pics_3">
-            <div class="product_3"> 
-            <img src="pictures/download.jpg">
-            <p>Ivory Grace<p>
-            <p>1,250 EGP</p>
-            <hr>
-            <i class="fa-regular fa-heart"></i>
-            <p class="add" onclick="addToCart('Ivory Grace', 1250)">+Add to cart</p>     
-            </div>
-            <div class="product_3"> 
-            <img src="pictures/Flowerbox.jpg">
-            <p>Blue Whisper</p>
-            <p>
-                <del>1,980 EGP</del> 1,450 EGP
-                </p>
-                <hr>
-                <i class="fa-regular fa-heart"></i>
-                <p class="add" onclick="addToCart('Blue Whisper', 1450)">+Add to cart</p>     
-            </div>
-            <div class="product_3"> 
-            <img src="pictures/Graduation.jpg">
-            <p>Pearl Harmony</p>
-            <p>2,200 EGP</p>
-            <hr>
-            <i class="fa-regular fa-heart"></i>
-            <p class="add" onclick="addToCart('Pearl Harmony', 2200)">+Add to cart</p>     
-            </div>
-            <div class="product_3"> 
+                <p class="add" onclick="addToCart('Rose Symphony', 2600)">+Add to cart</p>     
+            </div>   
+            <div class="product"> 
             <img src="pictures/liliyWallace.jpg">
             <p>Cloud Bloom</p>
             <p>
@@ -180,9 +154,33 @@
             <i class="fa-regular fa-heart"></i>
             <p class="add" onclick="addToCart('Cloud Bloom', 1900)">+Add to cart</p>     
             </div>
-           </div> 
-           <div class="pics_4">
-            <div class="product_4">
+             <div class="product">
+            <img src="pictures/download(2).jpg">
+            <p>Ribbon Serenity</p>
+            <p>3,100 EGP</p>
+            <hr>
+            <i class="fa-regular fa-heart"></i>
+            <p class="add"  onclick="addToCart('Ribbon Serenity', 3100)">+Add to cart</p>     
+            </div>
+            <div class="product"> 
+            <img src="pictures/download.jpg">
+            <p>Ivory Grace<p>
+            <p>1,250 EGP</p>
+            <hr>
+            <i class="fa-regular fa-heart"></i>
+            <p class="add" onclick="addToCart('Ivory Grace', 1250)">+Add to cart</p>     
+            </div>
+            <div class="product">
+            <img src="pictures/download(1).jpg">
+            <p>Azure Elegance</p>
+            <p>
+            <del>2,030 EGP</del>1,230 EGP
+            </p>
+            <hr>
+            <i class="fa-regular fa-heart"></i>
+            <p  class="add"onclick="addToCart('Azure Elegance', 1230)">+Add to cart</p>      
+            </div>
+            <div class="product">
             <img src="pictures/Regala.jpg">
             <p>Crimson Charm</p>
             <p>2,300 EGP</p>
@@ -190,7 +188,37 @@
             <i class="fa-regular fa-heart"></i>
             <p class="add" onclick="addToCart('Crimson Charm', 2300)">+Add to cart</p>     
             </div>
-            <div class="product_4">
+            <div class="product"> 
+            <img src="pictures/download(5).jpg">
+            <p>Crimson Lily Charm  </p>
+            <p>
+                <del>2,030 EGP </del>1,230 EGP
+                </p>
+                <hr>
+                <i class="fa-regular fa-heart"></i>
+                <p class="add"  onclick="addToCart('Crimson Lily Charm', 1230)">+Add to cart</p>     
+            </div>    
+            <div class="product"> 
+            <img src="pictures/download(8).jpg">
+            <p>Tulip Sunrise</p>
+            <p>2,300 EGP</p>
+                <hr>
+                <i class="fa-regular fa-heart"></i>
+                <p class="add" onclick="addToCart('Tulip Sunrise', 2300)">+Add to cart</p>     
+            </div>
+             
+            <div class="product"> 
+            <img src="pictures/Flowerbox.jpg">
+            <p>Blue Whisper</p>
+            <p>
+                <del>1,980 EGP</del> 1,450 EGP
+                </p>
+                <hr>
+                <i class="fa-regular fa-heart"></i>
+                <p class="add" onclick="addToCart('Blue Whisper', 1450)">+Add to cart</p>     
+            </div>
+            
+            <div class="product">
             <img src="pictures/Spring.jpg">
             <p>Blush Delight</p>
             <p>
@@ -200,7 +228,7 @@
                 <i class="fa-regular fa-heart"></i>
                 <p class="add" onclick="addToCart('Blush Delight', 2100)">+Add to cart</p>     
             </div>
-            <div class="product_4">
+            <div class="product hidden">
             <img src="pictures/What.jpg">
             <p>Magenta Glow</p>
             <p>3,000 EGP</p>
@@ -208,7 +236,15 @@
             <i class="fa-regular fa-heart"></i>
             <p class="add" onclick="addToCart('Magenta Glow', 3000)">+Add to cart</p>     
             </div>
-            <div class="product_4">
+            <div class="product hidden"> 
+            <img src="pictures/download(4).jpg">
+            <p>Midnight Harmony</p>
+            <p>2,300 EGP </p>
+            <hr>
+            <i class="fa-regular fa-heart"></i>
+            <p class="add" onclick="addToCart('Midnight Harmony', 2300)">+Add to cart</p>     
+            </div>
+            <div class="product hidden">
             <img src="pictures/Букет.jpg">
             <p>Rose Symphony</p>
             <p>
@@ -218,11 +254,30 @@
                 <i class="fa-regular fa-heart"></i>
                 <p class="add" onclick="addToCart('Rose Symphony', 2600)">+Add to cart</p>     
             </div>
+            <div class="product hidden"> 
+            <img src="pictures/download(6).jpg">
+            <p>Golden Grace </p>
+            <p>3,100 EGP</p>
+            <hr>
+            <i class="fa-regular fa-heart"></i>
+            <p class="add" onclick="addToCart('Golden Grace', 3100)">+Add to cart</p>     
             </div>
-            <div class="more">
-            <p>VIEW MORE </p>
+            <div class="product hidden"> 
+            <img src="pictures/download(7).jpg">
+            <p>Blush Harmony</p>
+            <p>
+                <del>4,660 EGP</del>3,200 EGP
+                </p>
+                <hr>
+                <i class="fa-regular fa-heart"></i>
+                <p class="add" onclick="addToCart('Blush Harmony', 3200)">+Add to cart</p>     
             </div>
-    </div>     
-     <script src="Products.js"></script>
+            </div>
+            <div class="more" onclick="showMore()">
+            <p>VIEW MORE</p>
+            </div>
+           
+
+<script src="Products.js"></script>
 </body>
-</html>
+</html>    
