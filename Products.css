@@ -5,8 +5,9 @@ body {
 .list :hover{
             color: rgb(4, 151, 151);
             cursor: pointer;
-        }
-  .navbar {
+         }
+         
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,7 +18,6 @@ body {
     top: 0;
     z-index: 1000;
 }
-
 
 .logo img {
     width: 160px;
@@ -248,8 +248,5 @@ body {
         cursor:pointer;
     }
   .hidden {
-    display: none !important;
-}
-.list .product.hidden {
     display: none !important;
 }

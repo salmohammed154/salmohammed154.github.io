@@ -26,6 +26,7 @@ function setView(type) {
     container.classList.remove("grid", "list", "details");
     container.classList.add(type);
 }
+
 function showMore() {
     let hiddenProducts = document.querySelectorAll(".product.hidden");
 
