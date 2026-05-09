@@ -11,8 +11,6 @@
 body {
     font-family: Arial;
     background-color: #f0f4f4;
-    margin: 0;
-    padding: 0;
 }
 
 h2 {
@@ -20,7 +18,6 @@ h2 {
     color: rgb(4, 151, 151);
     font-size: 50px;
     margin-top: 30px;
-    letter-spacing: 2px;
 }
 
 .cartBox {
@@ -123,6 +120,11 @@ h2 {
 .check:hover {
     background-color: rgb(4, 151, 151);
 }
+#checkoutBtn:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed;  
+    opacity: 0.6;
+}
 
 </style>
 
@@ -165,7 +167,7 @@ h2 {
      <div class="total-box">
     <p>Total: <span id="total">0</span> EGP</p>
     </div>
-    <a href="checkout.html" class="check" >Checkout</a>
+   <button id="checkoutbtn" class="check" onclick="location.href='checkout.html'">Checkout</button>
 
 </div>
 
@@ -194,6 +196,12 @@ function showCart(){
     }
 
     document.getElementById("total").innerText = total;
+        let btn = document.getElementById("checkoutbtn");
+    if (cart.length === 0) {
+        btn.disabled = true; 
+    } else {
+        btn.disabled = false;
+    }
 }
 
 function removeItem(i){
