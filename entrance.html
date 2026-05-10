@@ -160,6 +160,7 @@
                 uMsg.style.color = "green";
                 uMsg.innerHTML = "Success! Logging in...";
                 pMsg.innerHTML = ""; 
+                 window.location.href = "index.html"; 
             } else {
                 uInput.style.borderColor = "red";
                 pInput.style.borderColor = "red";
@@ -180,7 +181,7 @@
         var eMsg = document.getElementById("emailMsg");
 
         if (nInput.value !== "" && eInput.value !== "") {
-            // Final check to make sure email is valid before allowing signup
+           
             if (!isEmailValid(eInput.value)) {
                 eInput.style.borderColor = "red";
                 eMsg.style.color = "red";
