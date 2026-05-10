@@ -5,147 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Signup</title>
     <style>
-       * {
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    display: grid;
-    place-items: center; 
-    background: #f4f7f6;
-    font-family: sans-serif;
-}
-       .wrapper {
-    width: 90%;          
-    max-width: 400px;    
-}
-
-     input[type="radio"] {
-            display: none; }
+        
+        * { margin: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-items: center; 
+            background: #f4f7f6;
+            font-family: sans-serif;
+        }
+        .wrapper { width: 90%; max-width: 400px; background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        input[type="radio"] { display: none; }
         .title-controls {
-            display: flex;
-            width: 100%;
-            height: 50px;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            position: relative;
-            margin-bottom: 25px;
+            display: flex; width: 100%; height: 50px; border: 1px solid #e0e0e0;
+            border-radius: 10px; position: relative; margin-bottom: 25px;
         }
-
-        .tab {
-            flex: 1;
-            text-align: center;
-            line-height: 48px;
-            font-size: 17px;
-            font-weight: 600;
-            cursor: pointer;
-            z-index: 1;
-            color: #333;
-            transition: color 0.3s ease;
-        }
-
-        .slider-tab {
-            position: absolute;
-            height: 100%;
-            width: 50%;
-            left: 0;
-            background:  rgb(4,151,151);
-            border-radius: 9px;
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
+        .tab { flex: 1; text-align: center; line-height: 48px; font-size: 17px; font-weight: 600; cursor: pointer; z-index: 1; color: #333; transition: color 0.3s ease; }
+        .slider-tab { position: absolute; height: 100%; width: 50%; left: 0; background: rgb(4,151,151); border-radius: 9px; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        
         #login-tab:checked ~ .container .slider-tab { left: 0; }
         #signup-tab:checked ~ .container .slider-tab { left: 50%; }
-        
         #login-tab:checked ~ .container .login-label { color: #fff; }
         #signup-tab:checked ~ .container .signup-label { color: #fff; }
-        .container {
-            width: 100%;
-            overflow: hidden;
-        }
 
-        .form-inner {
-            display: flex;
-            width: 200%; 
-            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
+        .container { width: 100%; overflow: hidden; }
+        .form-inner { display: flex; width: 200%; transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        .form-inner form { width: 50%; padding: 10px; }
+        #signup-tab:checked ~ .container .form-inner { transform: translateX(-50%); }
 
-        .form-inner form {
-            width: 50%;
-            padding: 10px;
-        }
-
-        #signup-tab:checked ~ .container .form-inner {
-            transform: translateX(-50%);
-        }
-
-        .field {
-            margin-top: 20px;
-        }
-
-        input {
-            width: 100%;
-            height: 48px;
-            padding: 0 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            outline: none;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        input:focus {
-            border-color: #680f0f;
-        }
-
-        button {
-            width: 100%;
-            height: 50px;
-            background:black;
-            border: none;
-            color: #fff;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 25px;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: rgb(4,151,151);
-        }
-
+        .field { margin-top: 15px; } 
+        label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 5px; }
         
-        .form-footer {
-            text-align: center;
-            margin-top: 25px;
-            font-size: 14px;
-            color: #777;
+        input:not([type="radio"]) { 
+            width: 100%; 
+            height: 48px; 
+            padding: 0 15px; 
+            border: 2px solid #ddd; 
+            border-radius: 8px; 
+            outline: none; 
+            font-size: 16px; 
+            transition: 0.3s; 
         }
 
-        .form-footer label {
-            color: #680f0f;
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
+        .msg {
+            font-size: 12px;
+            margin-top: 4px;
+            height: 14px;
+            font-weight: bold;
         }
+        
+        button { width: 100%; height: 50px; background: black; border: none; color: #fff; font-size: 18px; font-weight: 600; border-radius: 8px; cursor: pointer; margin-top: 25px; transition: background 0.3s; }
+        button:hover { background: rgb(4,151,151); }
 
-        .form-footer label:hover {
-            text-decoration: underline;
-        }
-
-        .pass-link {
-            text-align: center;
-            margin-top: 12px;
-        }
-
-        .pass-link a {
-            color: #680f0f;
-            text-decoration: none;
-            font-size: 13px;
-        }
+        .form-footer { text-align: center; margin-top: 25px; font-size: 14px; color: #777; }
+        .form-footer label { color: #680f0f; cursor: pointer; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -162,32 +75,35 @@ body {
             </div>
 
             <div class="form-inner">
-                <form action="#" class="login">
+                <form class="login">
                     <div class="field">
-                        <input type="email" placeholder="Email Address" required>
+                        <label>Username</label>
+                        <input type="text" id="userIn" placeholder="Username" onkeyup="validate('userIn', 'userMsg')" required>
+                        <p id="userMsg" class="msg"></p>
                     </div>
                     <div class="field">
-                        <input type="password" placeholder="Password" required>
+                        <label>Password</label>
+                        <input type="password" id="passIn" placeholder="Password" onkeyup="validate('passIn', 'passMsg')" required>
+                        <p id="passMsg" class="msg"></p>
                     </div>
-                    <div class="pass-link"><a href="#">Forgot password?</a></div>
-                    <button type="button" onclick="window.location.href='index.html'">Login</button>
+                    <button type="button" onclick="checkAllLogin()">Login</button>
                     <div class="form-footer">
-                        Not a memebr yet? <label for="signup-tab">Signup now</label>
+                        Not a member? <label for="signup-tab">Signup now</label>
                     </div>
                 </form>
 
-                <form action="#" class="signup">
+                <form class="signup">
                     <div class="field">
-                        <input type="text" placeholder="Full Name" required>
+                        <label>Full Name</label>
+                        <input type="text" id="nameUp" placeholder="Full Name" onkeyup="validate('nameUp', 'nameMsg')" required>
+                        <p id="nameMsg" class="msg"></p>
                     </div>
                     <div class="field">
-                        <input type="email" placeholder="Email Address" required>
+                        <label>Email Address</label>
+                        <input type="email" id="emailUp" placeholder="Email" onkeyup="validate('emailUp', 'emailMsg')" required>
+                        <p id="emailMsg" class="msg"></p>
                     </div>
-                    <div class="field">
-                        <input type="password" placeholder="Create Password" required>
-                    </div>
-                    <button type="submit">Sign Up</button>
-                    
+                    <button type="button" onclick="checkAllSignup()">Sign Up</button>
                     <div class="form-footer">
                         Already have an account? <label for="login-tab">Login now</label>
                     </div>
@@ -196,4 +112,84 @@ body {
         </div>
     </div>
 
+    <script>
+    const correctUser = "admin";
+    const correctPass = "1234";
+
+    
+    function isEmailValid(email) {
+        
+        var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return pattern.test(email);
+    }
+
+    function validate(inputId, msgId) {
+        var input = document.getElementById(inputId);
+        var text = document.getElementById(msgId);
+
+        if (input.value == "") {
+            input.style.borderColor = "red";
+            text.style.color = "red";
+            text.innerHTML = input.placeholder + " is required";
+        } 
+        else {
+            
+            if (inputId === "emailUp" && !isEmailValid(input.value)) {
+                input.style.borderColor = "red";
+                text.style.color = "red";
+                text.innerHTML = "Invalid email format (needs @ and .com)";
+            } else {
+                input.style.borderColor = "green";
+                text.style.color = "green";
+                text.innerHTML = "Entered " + input.placeholder;
+            }
+        }
+    }
+
+    function checkAllLogin() {
+        validate('userIn', 'userMsg');
+        validate('passIn', 'passMsg');
+
+        var uInput = document.getElementById("userIn");
+        var pInput = document.getElementById("passIn");
+        var uMsg = document.getElementById("userMsg");
+        var pMsg = document.getElementById("passMsg");
+
+        if (uInput.value !== "" && pInput.value !== "") {
+            if (uInput.value === correctUser && pInput.value === correctPass) {
+                uMsg.style.color = "green";
+                uMsg.innerHTML = "Success! Logging in...";
+                pMsg.innerHTML = ""; 
+            } else {
+                uInput.style.borderColor = "red";
+                pInput.style.borderColor = "red";
+                uMsg.style.color = "red";
+                pMsg.style.color = "red";
+                uMsg.innerHTML = "Invalid Username";
+                pMsg.innerHTML = "Invalid Password";
+            }
+        }
+    }
+
+    function checkAllSignup() {
+        validate('nameUp', 'nameMsg');
+        validate('emailUp', 'emailMsg');
+
+        var nInput = document.getElementById("nameUp");
+        var eInput = document.getElementById("emailUp");
+        var eMsg = document.getElementById("emailMsg");
+
+        if (nInput.value !== "" && eInput.value !== "") {
+            // Final check to make sure email is valid before allowing signup
+            if (!isEmailValid(eInput.value)) {
+                eInput.style.borderColor = "red";
+                eMsg.style.color = "red";
+                eMsg.innerHTML = "Please enter a valid email address";
+            } else {
+                document.getElementById("nameMsg").innerHTML = "Signup Successful!";
+            }
+        }
+    }
+    </script>
 </body>
+</html>
